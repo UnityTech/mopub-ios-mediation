@@ -54,11 +54,6 @@
 {
     static dispatch_once_t unityInitToken;
     dispatch_once(&unityInitToken, ^{
-
-        UADSMetaData* testMetadata = [[UADSMetaData alloc] initWithCategory:@"test"];
-        [testMetadata set:@"serverUrl" value:@"https://fake-ads-backend.applifier.info"];
-        [testMetadata commit];
-
         UADSMediationMetaData *mediationMetaData = [[UADSMediationMetaData alloc] init];
         [mediationMetaData setName:@"MoPub"];
         [mediationMetaData setVersion:[[MoPub sharedInstance] version]];
