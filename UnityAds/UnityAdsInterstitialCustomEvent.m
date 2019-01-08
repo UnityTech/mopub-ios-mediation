@@ -38,7 +38,7 @@ static NSString *const kUnityAdsOptionZoneIdKey = @"zoneId";
         self.placementId = [info objectForKey:kUnityAdsOptionZoneIdKey];
     }
     if (gameId == nil || self.placementId == nil) {
-        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:[NSError errorWithDomain:MoPubRewardedVideoAdsSDKDomain code:MPRewardedVideoAdErrorInvalidCustomEvent userInfo:@{NSLocalizedDescriptionKey: @"Custom event class data did not contain gameId/placementId.", NSLocalizedRecoverySuggestionErrorKey: @"Update your MoPub custom event class data to contain a valid Unity Ads gameId/placementId."}]];
+        [self.delegate interstitialCustomEvent:self didFailToLoadAdWithError:[NSError errorWithDomain:@"" code:-1200 userInfo:@{NSLocalizedDescriptionKey: @"Custom event class data did not contain gameId/placementId.", NSLocalizedRecoverySuggestionErrorKey: @"Update your MoPub custom event class data to contain a valid Unity Ads gameId/placementId."}]];
         return;
     }
     [[MPUnityRouter sharedRouter] requestVideoAdWithGameId:gameId placementId:self.placementId delegate:self];
